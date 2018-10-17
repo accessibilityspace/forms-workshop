@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Magical Inn registration form</title>
+    <meta name="description" content="The form to add ourselves to the guest book of our magical inn">
+    <meta name="author" content="JayKid">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>Magical inn guest book registration</h1>
+    <form action="/guest-form" method="POST">
+        <section>
+            <h2>Personal information</h2>
+            <p>
+                <label>Name
+                    <strong><abbr title="required">*</abbr></strong>
+                    <input name="name" type="text" required aria-required="true">
+                </label>
+                <label>Surname
+                    <strong><abbr title="required">*</abbr></strong>
+                    <input name="surname" type="text" required aria-required="true">
+                </label>
+            </p>
+            <p>
+                <label for="age">Age</label>
+                <input aria-describedby="age-description" name="age" type="number" min="0" max="150" />
+                <span id="age-description" class="field-description">We only accept people that are up to 150 years old to stay in our inn by company policy.</span>
+            </p>
+        </section>
+        <section>
+            <h2>Additional information</h2>
+            <p>
+                <label for="currency">
+                    <span>Payment currency:</span>
+                </label>
+                <select id="currency" name="currency">
+                    <option value="hugs">Hugs</option>
+                    <option value="nibblecoins">Nibblecoins</option>
+                    <option value="icecreams">Ice creams</option>
+                </select>
+            </p>
+            <fieldset>
+                <legend>Room size</legend>
+                <p>
+                    <input type="radio" name="size" id="size_1" value="single">
+                    <label for="size_1">Single</label>
+                </p>
+                <p>
+                    <input type="radio" name="size" id="size_2" value="double">
+                    <label for="size_2">Double</label>
+                </p>
+                <p>
+                    <input type="radio" name="size" id="size_3" value="suite">
+                    <label for="size_3">Suite with gummy furniture</label>
+                </p>
+            </fieldset>
+
+        </section>
+        <button type="submit">Send personal details</button>
+    </form>
+</body>
+
+</html>
