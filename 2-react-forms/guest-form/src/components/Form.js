@@ -49,6 +49,8 @@ class Form extends React.Component {
                             <strong><abbr title="required">*</abbr></strong>
                             <input name="name" type="text" ref="name" required aria-required="true" onBlur={this.validateForm.bind(this, "name")}/>
                         </label>
+                    </p>
+                    <p>
                         <label>Surname
                             <strong><abbr title="required">*</abbr></strong>
                             <input name="surname" type="text" ref="surname" required aria-required="true" onBlur={this.validateForm.bind(this, "surname")}/>
