@@ -42,6 +42,13 @@ h2 {
     font-style: italic;
 }
 
+.advertisement {
+    display: block;
+    margin: 0 auto;
+    height: 20vh;
+    margin-bottom: 1rem;
+}
+
 /* From https://webaim.org/techniques/css/invisiblecontent/ */
 .visually-hidden {
     position:absolute;
