@@ -57,7 +57,7 @@ class Form extends React.Component {
                     <p>
                         <label htmlFor="age">Age</label>
                         <input aria-describedby="age-description" name="age" ref="age" type="number" min="0" max="150" onBlur={this.validateForm.bind(this, "age")} />
-                        <span id="age-description" className="field-description">We only accept people that are up to 150 years old to stay in our inn by company policy.</span>
+                        <span id="age-description" className="field-description"><span className="visually-hidden">Age:</span> We only accept people that are up to 150 years old to stay in our inn by company policy.</span>
                     </p>
                 </section>
                 <section>
