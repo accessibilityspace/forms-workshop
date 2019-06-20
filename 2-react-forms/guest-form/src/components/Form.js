@@ -10,21 +10,22 @@ class Form extends React.Component {
             isLoading: false 
         };
         this.onSubmit = this.onSubmit.bind(this);
+        this.validateForm = this.validateForm.bind(this);
     }
 
     
-    validateForm(ref) {
-        if (this.refs[ref]) {
-            this.setState(state => {
-                return { 
-                    inputs: 
-                    {
-                        ...state.inputs,
-                        [ref]: !this.refs[ref].checkValidity()  
-                    },
-                    isLoading: state.isLoading
-                };
-            })
+    validateForm(event) {
+        const blurredInput = event.target;
+        if (blurredInput) {
+        this.setState(state => {
+            return {
+            inputs: {
+                ...state.inputs,
+                [blurredInput.name]: !blurredInput.checkValidity()
+            },
+            isLoading: state.isLoading
+            };
+        });
         }
     }
 
@@ -47,18 +48,18 @@ class Form extends React.Component {
                     <p>
                         <label>Name
                             <strong><abbr title="required">*</abbr></strong>
-                            <input name="name" type="text" ref="name" required aria-required="true" onBlur={this.validateForm.bind(this, "name")}/>
+                            <input name="name" type="text" ref="name" required aria-required="true" onBlur={this.validateForm}/>
                         </label>
                     </p>
                     <p>
                         <label>Surname
                             <strong><abbr title="required">*</abbr></strong>
-                            <input name="surname" type="text" ref="surname" required aria-required="true" onBlur={this.validateForm.bind(this, "surname")}/>
+                            <input name="surname" type="text" ref="surname" required aria-required="true" onBlur={this.validateForm}/>
                         </label>
                     </p>
                     <p>
                         <label htmlFor="age">Age</label>
-                        <input aria-describedby="age-description" name="age" ref="age" type="number" min="0" max="150" onBlur={this.validateForm.bind(this, "age")} />
+                        <input aria-describedby="age-description" name="age" ref="age" type="number" min="0" max="150" onBlur={this.validateForm} />
                         <span id="age-description" className="field-description"><span className="visually-hidden">Age:</span> We only accept people that are up to 150 years old to stay in our inn by company policy.</span>
                     </p>
                 </section>
