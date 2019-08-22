@@ -17,15 +17,15 @@ class Form extends React.Component {
     validateForm(event) {
         const blurredInput = event.target;
         if (blurredInput) {
-        this.setState(state => {
-            return {
-            inputs: {
-                ...state.inputs,
-                [blurredInput.name]: !blurredInput.checkValidity()
-            },
-            isLoading: state.isLoading
-            };
-        });
+            this.setState(state => {
+                return {
+                inputs: {
+                    ...state.inputs,
+                    [blurredInput.name]: !blurredInput.checkValidity()
+                },
+                isLoading: state.isLoading
+                };
+            });
         }
     }
 
